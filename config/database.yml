@@ -61,8 +61,8 @@ development:
 test:
   <<: *default
   database: pintapp_test
-  username: postgres
-  password: pacavelli
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
  
 
 # As with config/secrets.yml, you never want to store sensitive information,
