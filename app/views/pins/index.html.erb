@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron center">
+    <h1>Welcome to my Pin app</h1>
+    <p>getting started here</p>
+    <%= link_to 'Login',  new_user_session_path, class:'btn btn-primary' %>
+    <%=link_to 'Sign Up',new_user_registration_path, class:'btn btn-success' %>
+</div>
 
-<h1>Pins</h1>
+<div id="pins" class="transitions-enabled masonry-brick">
+    
+		<div class="row">
+		<% @pins.each do |pin| %>
+  			<div class="col-sm-6 col-md-4 box">
+    			<div class="thumbnail">
+			
+					<%=link_to image_tag(pin.image.url(:medium)),pin  %>
+					<div class="caption">
+						<p><%= pin.description %></p>
+						<p>By: <%= pin.user.name if pin.user %></p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pins.each do |pin| %>
-      <tr>
-        <td><%= pin.description %></td>
-        <td><%= link_to 'Show', pin %></td>
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    
+</div>
+<div class="center">
+	<%= will_paginate @pins, renderer: BootstrapPagination::Rails %>
+</div>

@@ -5,6 +5,10 @@
 
   <div class="form-signin">
     <h2 class="form-signin-heading">Sign up</h2>
+
+     <%= f.label :name,  class:"sr-only" %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"Name",class:"form-control" %>
+
     <%= f.label :email,  class:"sr-only" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email",class:"form-control" %>
   
