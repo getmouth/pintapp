@@ -1,11 +1,15 @@
+<% unless user_signed_in? %>
+
 <div class="jumbotron center">
     <h1>Welcome to my Pin app</h1>
-    <p>getting started here</p>
+    <p>getting started</p>
     <%= link_to 'Login',  new_user_session_path, class:'btn btn-primary' %>
     <%=link_to 'Sign Up',new_user_registration_path, class:'btn btn-success' %>
 </div>
+<% end %>
 
-<div id="pins" class="transitions-enabled masonry-brick">
+
+<div id="pins" class="transitions-enabled">
     
 		<div class="row">
 		<% @pins.each do |pin| %>
