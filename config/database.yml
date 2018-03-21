@@ -17,6 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  username: postgres
+  password: 1234567
+  host: localhost
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -24,8 +27,7 @@ default: &default
 development:
   <<: *default
   database: pintapp_development
-  username: postgres
-  password: 1234567
+ 
  
 
   # The specified database role being used to connect to postgres.
@@ -61,8 +63,7 @@ development:
 test:
   <<: *default
   database: pintapp_test
-  username: postgres
-  password: 1234567
+  
  
 
 # As with config/secrets.yml, you never want to store sensitive information,

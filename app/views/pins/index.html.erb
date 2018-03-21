@@ -15,8 +15,7 @@
 		<% @pins.each do |pin| %>
   			<div class="col-sm-6 col-md-4 box">
     			<div class="thumbnail">
-			
-					<%=link_to image_tag(pin.image.url(:medium)),pin  %>
+						<%=link_to image_tag(pin.image_url),pin  %>
 					<div class="caption">
 						<p><%= pin.description %></p>
 						<p>By: <%= pin.user.name if pin.user %></p>

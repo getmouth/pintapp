@@ -27,22 +27,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*------------------------ sign in form --------------*/
 
 body {
@@ -91,4 +75,17 @@ body {
   .checkbox-inline input[type="checkbox"] {
     position: absolute;
     margin-left: 0px;
+  }
+
+  footer {
+    margin-bottom: -100px;
+    height: 60px;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    font-size: 13px;
+  }
+
+  .wrapper {
+    min-height: 600px;
   }

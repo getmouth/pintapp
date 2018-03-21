@@ -9,13 +9,18 @@
   </head>
 
   <body>
-	<%= render 'layouts/navbar' %>
+  <%= render 'layouts/navbar' %>
+  <div class="wrapper">
     <div class="container">
-    <% flash.each do |name, msg| %>
-      <%= content_tag(:div, msg, class: "alert alert-info ") %>
-    <% end %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-info ") %>
+      <% end %>
 
     	<%= yield %>
-	</div>
+    </div>
+  </div>
+  <footer>
+    <p class="muted">&copy; 2018 Pint</p>
+  </footer>
   </body>
 </html>
